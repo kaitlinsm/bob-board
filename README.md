@@ -6,32 +6,40 @@ Tracks reverse engineering the Bob dishwasher ESP32 control board for repurposin
 
 esp32-wroom-32d
 
-18 pin 4-wire spi
-display model no JWS024N1DS04.V0
+### 18 pin 4-wire spi
+
+display model no JWS024N1DS04.V0 or QY24057A0-00
+
+https://offer-product.oss-cn-beijing.aliyuncs.com/product/offer/attachment/null/file/subPdf_820578_362261_20240514-150813443.pdf
+
+the one listed there uses ST7789V
 
 ```
 spi.     esp
-1        nc
+1        GND
 2        28 (IO17)
 3        27 (IO16)
 4        23 (IO15)
 5        16 (IO13)
 6        30 (IO18)
 7        31 (IO19)
-8        nc
-9        nc
-10       nc
-11       nc
-12       nc
-13       nc
-14       nc
+8        ?
+9        ?
+10       ?
+11       ?
+12       ?
+13       ?
+14       ?
 15       ?
 16       ?
 17       ?
 18       ?
 ```
 
-header
+### unpopulated header
+
+This will have to be populated to do the re-flashing.
+
 (pin 1 nearest ESP when viewed from ESP Top Side)
 
 ```
@@ -47,7 +55,11 @@ header
 X
 ```
 
-rj45
+### rj45
+
+This carries power, ground and probably a bunch of signals to trigger relays and sensors.
+
+All I really want from that is the power and ground connections.
 
 socket hole facing you
 
@@ -67,7 +79,11 @@ socket hole facing you
 
 ```
 
-touch pin
+### touch pin
+
+The touch sensor is attached to the door, and seems to be connected to two wires.
+
+idk both pins are connected to the same pin on the board? something something witchcraft idk ¯\_(ツ)\_/¯
 
 J1
 
@@ -78,5 +94,3 @@ J1
 
 1 12 (IO27) (???)
 2 12 (IO27)
-
-idk both pins are connected to the same pin on the board? something something witchcraft idk ¯\_(ツ)\_/¯
